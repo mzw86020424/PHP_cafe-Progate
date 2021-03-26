@@ -1,23 +1,6 @@
 <link rel="stylesheet" href="stylesheet.css">
 <?php
-class Menu {
-  public $name;
-  
-  public function __construct($name) {
-    $this->name = $name;
-  }
-  
-  public function hello() {
-    echo '私は'.$this->name.'です';
-  }
-}
-
-$juice = new Menu('JUICE');
-$coffee = new Menu('COFFEE');
-$curry = new Menu('CURRY');
-$pasta = new Menu('PASTA');
-// 配列の中に上記の4つのインスタンスを順に入れて、変数$menusに代入してください
-$menus = array($juice, $coffee, $curry, $pasta);
+require_once('data.php');
 
 ?>
 
