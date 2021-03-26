@@ -1,8 +1,4 @@
-<link rel="stylesheet" href="stylesheet.css">
-<?php
-require_once('data.php');
-
-?>
+<?php require_once('data.php') ?>
 
 <!DOCTYPE html>
 <html>
@@ -16,16 +12,20 @@ require_once('data.php');
 <body>
   <div class="menu-wrapper container">
     <h1 class="logo">Café Progate</h1>
-    <div class="menu-items">
-      <?php foreach($menus as $menu) : ?>
-      <div class="menu-item">
-      <img src="<?php echo $menu->getImage() ?>" alt="">
-        <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
-        <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?>（ 税込 ）</p>
-        <p>注文数: <?php echo $menu->getOrderCount() ?></p>
+    <form action="confirm.php" method="POST">
+      <div class="menu-items">
+        <?php foreach($menus as $menu) : ?>
+        <div class="menu-item">
+        <img src="<?php echo $menu->getImage() ?>" alt="">
+          <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
+          <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?>（ 税込 ）</p>
+          <input type="text" name="<?php echo $menu->getName() ?>" value="0">
+          <span>個</span>
+        </div>
+        <?php endforeach ?>
       </div>
-      <?php endforeach ?>
-    </div>
+      <input type="submit" value="注文する">
+    </form>
   </div>
 </body>
 </html>
