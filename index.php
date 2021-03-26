@@ -2,19 +2,19 @@
 class Menu {
   public $name;
 
+  public function __construct($name) {
+    $this->name = $name;
+  }
+
   public function hello() {
-    echo "私はMenuクラスのインスタンスです";
+    echo "私は{$this->name}です";
   }
 }
 
-$curry = new Menu();
-$pasta = new Menu();
+$curry = new Menu('CURRY');
+$pasta = new Menu('PASTA');
 
-$curry->name = 'CURRY';
-echo $curry->name;
-$curry->hello();
-
-$pasta->name = 'PASTA';
-echo $pasta->name;
-$pasta->hello();
 ?>
+
+<p><?php echo $curry->name ?></p>
+<p><?php echo $pasta->name ?></p>
