@@ -14,6 +14,10 @@ class Menu {
   public function hello() {
     echo '私は'.$this->name.'です';
   }
+
+  public function getTaxIncludedPrice() {
+    return floor($this->price * 1.1);
+  }
 }
 
 ?>
