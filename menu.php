@@ -18,6 +18,14 @@ class Menu {
   public static function getCount() {
     return self::$count;
   }
+
+  public static function findByName($menus, $name) {
+    foreach($menus as $menu) {
+      if ($menu->getName() == $name) {
+        return $menu;
+      }
+    }
+  }
   
   public function getName() {
     return $this->name;
@@ -43,12 +51,14 @@ class Menu {
     $this->orderCount = $orderCount;
   }
 
-  public static function findByName($menus, $name) {
-    foreach($menus as $menu) {
-      if ($menu->getName() == $name) {
-        return $menu;
+  public function getReviews($reviews) {
+    $reviewsForMenu = array();
+    foreach ($reviews as $review) {
+      if ($review->getMenuName() == $this->getName()) {
+        $reviewsForMenu[] = $review;
       }
     }
+    return $reviewsForMenu;
   }
 }
 
