@@ -18,8 +18,10 @@
       <div class="menu-items">
         <?php foreach($menus as $menu) : ?>
         <div class="menu-item">
-        <img src="<?php echo $menu->getImage() ?>" alt="">
-          <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
+          <img src="<?php echo $menu->getImage() ?>" alt="">
+          <a href="show.php">
+            <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
+          </a>
           <?php if ($menu instanceof Drink) : ?>
             <p class="menu-item-type"><?php echo $menu->getType() ?></p>
           <?php elseif($menu instanceof Food) : ?>
