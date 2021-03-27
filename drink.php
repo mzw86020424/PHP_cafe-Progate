@@ -5,12 +5,8 @@ class Drink extends Menu {
   private $type;
 
   public function __construct($name, $price, $image, $type) {
-    $this->name = $name;
-    $this->price = $price;
-    $this->image = $image;
+    parent::__construct($name, $price, $image);
     $this->type = $type;
-    self::$count++;
-    
   }
 
   public function getType() {
