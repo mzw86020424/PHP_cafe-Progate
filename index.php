@@ -21,7 +21,9 @@
         <img src="<?php echo $menu->getImage() ?>" alt="">
           <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
           <?php if ($menu instanceof Drink) : ?>
-          <p class="menu-item-type"><?php echo $menu->getType() ?></p>
+            <p class="menu-item-type"><?php echo $menu->getType() ?></p>
+          <?php elseif($menu instanceof Food) : ?>
+            <p>辛さ：<?php echo $menu->getSpiciness() ?></p>
           <?php endif ?>
           <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?>（ 税込 ）</p>
           <input type="text" name="<?php echo $menu->getName() ?>" value="0">
