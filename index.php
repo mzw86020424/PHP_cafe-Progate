@@ -20,6 +20,7 @@
         <div class="menu-item">
         <img src="<?php echo $menu->getImage() ?>" alt="">
           <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
+          <p class="menu-item-type"><?php echo $menu->getType() ?></p>
           <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?>（ 税込 ）</p>
           <input type="text" name="<?php echo $menu->getName() ?>" value="0">
           <span>個</span>
