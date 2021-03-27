@@ -19,7 +19,7 @@
         <?php foreach($menus as $menu) : ?>
         <div class="menu-item">
           <img src="<?php echo $menu->getImage() ?>" alt="">
-          <a href="show.php">
+          <a href="show.php?name=<?php echo $menu->getName() ?>">
             <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
           </a>
           <?php if ($menu instanceof Drink) : ?>
