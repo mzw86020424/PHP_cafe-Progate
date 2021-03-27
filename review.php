@@ -2,11 +2,11 @@
 class Review {
   private $menuName;
   private $body;
-  private $userName;
+  private $userId;
 
-  public function __construct($menuName, $userName, $body) {
+  public function __construct($menuName, $userId, $body) {
     $this->menuName = $menuName;
-    $this->userName = $userName;
+    $this->userId = $userId;
     $this->body = $body;
   }
 
@@ -20,7 +20,7 @@ class Review {
 
   public function getUser($users) {
     foreach ($users as $user) {
-      if ($this->userName == $user->getName()) {
+      if ($this->userId == $user->getId()) {
         return $user;
       }
     }
