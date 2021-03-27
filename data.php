@@ -2,6 +2,7 @@
 require_once('drink.php');
 require_once('food.php');
 require_once('review.php');
+require_once('user.php');
 
 $juice = new Drink('JUICE',600,'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/juice.png','アイス');
 $coffee = new Drink('COFFEE',500,'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/coffee.png','ホット');
@@ -9,6 +10,11 @@ $curry = new Food('CURRY',900,'https://s3-ap-northeast-1.amazonaws.com/progate/s
 $pasta = new Food('PASTA',1200,'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/pasta.png',1);
 
 $menus = array($juice, $coffee, $curry, $pasta);
+
+$user1 = new User('suzuki', 'male');
+$user2 = new User('tanaka', 'female');
+
+$users = array($user1, $user2);
 
 $review1 = new Review($juice->getName(), '果肉たっぷりのオレンジジュースです！');
 $review2 = new Review($curry->getName(), '具がゴロゴロしていてとてもおいしいです');
