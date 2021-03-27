@@ -42,6 +42,14 @@ class Menu {
   public function setOrderCount($orderCount) {
     $this->orderCount = $orderCount;
   }
+
+  public static function findByName($menus, $name) {
+    foreach($menus as $menu) {
+      if ($menu->getName() == $name) {
+        return $menu;
+      }
+    }
+  }
 }
 
 ?>
